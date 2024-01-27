@@ -8,15 +8,17 @@ import { ContactComponent } from './contact/contact.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { TeamComponent } from './team/team.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  {path:'home' , component:HomeComponent},
+  {path:'' , component:HomeComponent},
   {path:'register', component:RegisterComponent},
   {path:'contact', component:ContactComponent},
   {path:'service',component:ServiceComponent},
   {path:'portfolio',component:PortfolioComponent},
   {path:'about',component:AboutComponent},
-  {path:'team',component:TeamComponent}
+  {path:'team',component:TeamComponent},
+  {path:'login',component:LoginComponent}
 ];
 
 @NgModule({
