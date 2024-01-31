@@ -1,10 +1,21 @@
 var express = require('express')
 var router = express.Router()
-var userModel = require('../models/userModel')
+var userController = require('./UserController');
+var userModel = require('../models/indexModel')
+
+//router.route('/user/login').post(userController.loginUserControllerFn)
+//router.route('/create').post(userController.createUserControllerFn)
 
 
-router.route('/user/login').post(userModel.loginUserControllerFn)
-router.route('/user/create').post(userModel.createUserControllerFn)
+router.post('/usersignup',(req,res,next)=>{
+	collection_name="users"
+	indexModel.usersignup(collection_name,req.body).then((result)=>{
+		console.log(result)
+		res.json({'response':'success'})
+	}).catch((err)=>{
+		res.json({'response':'failed'})
+	})
+})
 /*router.get('/',(req,res,next)=>{
     res.send('its working , user router invoked')
 })
